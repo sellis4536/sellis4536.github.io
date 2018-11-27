@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Analysis: Select Climate Measures vs Latitude</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  </head>
+  <body>   
+    <!-- Navbar bs4 brand style with flex - to be used on all pages -->
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+          <nav class="navbar navbar-expand-xl navbar-light" style="background-color: 	#5DCAE2">
+            <a class="navbar-brand" href="index.html">WeatherPy</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                 <ul class="navbar-nav ml-auto">
+                    <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              Latitude vs...
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                              <a class="dropdown-item" href="maxtemp.html">Max Temperature</a>
+                              <a class="dropdown-item" href="humidity.html">Humidity</a>
+                              <a class="dropdown-item" href="cloudiness.html">Cloudiness</a>
+                              <a class="dropdown-item" href="windspeed.html">Wind Speed</a>
+                            </div>
+                          </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="compare.html">Compare Plots</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="data.html">City Data Table</a>
+                </li>
+          
+              </ul>
+            </div>
+          </nav>
+
+       <div class="jumbotron vertical-center"> 
+        <div class="container">
+            <!--column 1 will contain the text body of the analysis-->
+                <div class="row">
+                    <div class="col-sm-6">
+                            <h5>
+                              Analysis: Select Climate Measures vs Latitude<p>
+                            </h5>
+                            
+                        <p align="justify">
+                          <h6>Study Background and Process:</h6>  A study of Global weather observations, completed in October of 2018, sought to explore the relationship between a city's latitude and certain climate measures for the city.  The study universe was comprised of an initial set of 632 randomly generated latitude/longitude points.  These points were matched to nearby cities using the citypy library, resulting in a secondary universe of 617.  This set of 617 cities was queried against the OpenWeather API in order to collect current (10/12/2018) weather conditions. A total of 573 city queries returned valid, current weather data.  Four weather measures were collected for each city; Maximum Temperature, Cloud Cover Percentage, Humidity Percentage and Wind Speed <a href="data.html">(see City Data Table).</a>
+                        </p>
+                        <p align="justify">
+                          <h6>Findings Summary:</h6> 
+                          Maximum daily temperature for cities closer to the equator (latitude = 0 degrees) group higher than for cities further from the equator (shown by zero minus or zero plus latitude values on the X axis). At the time of data collection from OpenWeather on the collection date, cities within the band of latitudes between +20 and -20 (the Equitorial Band) showed a grouping of temperatures significantly higher than those outside the +20/-20 set of cities.
+                        </p>
+                        <p>Cities with latitudes approaching and only slightly exceeding +20 or -20 showed high temperature groupings that should be studied seperately with an eye on seasonal/hemishperic norms. It should be noted that the effects of elevation and proximity to significant open water is not considered in this analysis.
+                        </p>
+                        <p>               
+                        Visually, there appears to be no significant relationship between the measures of cloudiness, humidity and wind speed and the latitude of a city. Significant groupings do exist at certain, round number measures of these attributes, a phenomena most likely created by certain process rules for the categorization of these measures.  Further study is warranted with additional, longitudinal observations and the introduction of elevation, proximity to open water and prevailing wind data.
+                        </p>                
+                    </div>
+                    <!-- Begin column 2, creating a 2 col x 3 row grid for 4 plot thumbnails and title above them -->
+                    <div class="col-sm-3">
+                        <h5 align="right">Plot</h5>
+                        <div class="row">   
+                              <div class="img-thumbnail img-fluid">
+                                <a target="_blank" href=".\images-1\weatherPy_img01.jpg">
+                                          <img src=".\images-1\weatherPy_img01.png" class="img-fluid" alt="Responsive image">
+                                </a>
+                              </div>          
+                        </div>
+                        <div class="row">
+                              <div class="img-thumbnail img-fluid">
+                                <a target="_blank" href=".\images-1\weatherPy_img03.jpg">
+                                        <img src=".\images-1\weatherPy_img03.png" class="img-fluid" alt="Responsive image">
+                                </a>
+                              </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                      <h5 align="left">Gallery</h5>
+                      
+                        <div class="row">
+                              <div class="img-thumbnail img-fluid">
+                                <a target="_blank" href=".\images-1\weatherPy_img02.jpg">
+                                            <img src=".\images-1\weatherPy_img02.png"  class="img-fluid" alt="Responsive image">
+                                </a>
+                              </div>
+                          </div>
+                          <div class="row">
+                              <div class="img-thumbnail img-fluid">
+                                <a target="_blank" href=".\images-1\weatherPy_img04.jpg">
+                                            <img src=".\images-1\weatherPy_img04.png"  class="img-fluid" alt="Responsive image">
+                                </a>
+                              </div>
+                          </div>
+                     </div>       
+  </body>
+</html>
